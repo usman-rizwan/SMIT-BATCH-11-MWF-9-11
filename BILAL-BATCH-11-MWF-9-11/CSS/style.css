@@ -1,4 +1,82 @@
-body{
-    background-color: red;
-    color: white;
+/* 
+font weight
+font family
+font size
+color 
+font style
+text align
+*/
+
+* {
+  color: blue;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serifF;
+  /* background-color: aqua; */
 }
+
+body {
+  color: blue !important;
+  background-color: aqua;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serifF;
+  /* border: 1px solid red; */
+}
+
+body {
+  color: peru;
+  background-color: rosybrown;
+}
+
+h1 {
+  color: chocolate !important;
+}
+
+h1 {
+  color: blue;
+}
+
+.class_info_para{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-style: oblique;
+  font-stretch: condensed;
+}
+
+.class_info_para > b{
+  font-weight: lighter;
+  font-style: normal;
+  font-stretch: expanded;
+  font-family: monospace;
+}
+
+.class_info_para:hover{
+  background-color: #4070f4;
+  color: white;
+}
+/* h2,
+p {
+  color: blueviolet;
+}
+
+.heading_6 {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.class_info > h6{
+  color: darkcyan;
+}
+.class_info {
+  background-color: antiquewhite;
+}
+p.class_info_para {
+  color: #000;
+}
+
+#heading_3 {
+  font-style: italic;
+}
+
+.parent > h3 {
+  text-align: center;
+} */
