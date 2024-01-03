@@ -1,82 +1,38 @@
-/* 
-font weight
-font family
-font size
-color 
-font style
-text align
-*/
-
-* {
-  color: blue;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serifF;
-  /* background-color: aqua; */
+/* .paragraph{
+   text-align: center;
+   background-color: beige;
+   font-size: 40px;
+   border: 2px solid black;
 }
 
-body {
-  color: blue !important;
-  background-color: aqua;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serifF;
-  /* border: 1px solid red; */
-}
-
-body {
-  color: peru;
-  background-color: rosybrown;
-}
-
-h1 {
-  color: chocolate !important;
-}
-
-h1 {
-  color: blue;
-}
-
-.class_info_para{
-  font-family: sans-serif;
-  font-weight: bold;
-  font-style: oblique;
-  font-stretch: condensed;
-}
-
-.class_info_para > b{
-  font-weight: lighter;
-  font-style: normal;
-  font-stretch: expanded;
-  font-family: monospace;
-}
-
-.class_info_para:hover{
-  background-color: #4070f4;
-  color: white;
-}
-/* h2,
-p {
-  color: blueviolet;
-}
-
-.heading_6 {
-  font-size: 20px;
-  font-weight: lighter;
-}
-
-.class_info > h6{
-  color: darkcyan;
-}
-.class_info {
-  background-color: antiquewhite;
-}
-p.class_info_para {
-  color: #000;
-}
-
-#heading_3 {
-  font-style: italic;
-}
-
-.parent > h3 {
-  text-align: center;
+#p-1{
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 } */
+h1{
+   text-transform: capitalize;
+   text-decoration:blink;
+}
+.google{
+   text-decoration: none;
+   color: blue;
+   font-size: 20px;
+}
+/* p{
+   line-height: 3em; 
+    letter-spacing: 0.5em; 
+   word-spacing: 0.5em;
+   text-align: justify;
+} */
+
+/* p{
+   background-image: url("https://cdn1.iconfinder.com/data/icons/arrows-elements-outline/128/ic_round_hamburger_menu-512.png")   ;
+   vertical-align:top;
+   background-repeat: no-repeat;
+   height: 500px;
+   text-indent: 5em;
+  
+} */
+p{
+   text-shadow: 1px 1px 1px lightgray ;
+   text-align: center;
+}
