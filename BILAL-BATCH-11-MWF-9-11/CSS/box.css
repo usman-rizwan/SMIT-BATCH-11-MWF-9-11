@@ -73,6 +73,26 @@ li {
   margin-bottom: 4px;
 }
 
+.icon_view{
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  margin: 12px auto;
+  background-image: url('icons/instagram.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px;
+  border-radius: 50px;
+}
+.icon_view:hover{
+  background-color: black;
+  background-image: url('icons/instagram_white.svg');
+}
+
+.white_img{
+  display: none;
+}
+
 /* span{
     width: 200px !important;
     height: 100px;
