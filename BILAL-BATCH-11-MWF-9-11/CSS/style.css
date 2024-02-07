@@ -1,68 +1,47 @@
-@font-face {
-  font-family: ajeebogareeb;
-  src: url("fonts/BungeeSpice-Regular.ttf");
-}
 
-body{
-   background-image: url('https://plus.unsplash.com/premium_photo-1686575438064-898cb192c5b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGFyayUyMGJnfGVufDB8fDB8fHww');
-}
+
+
+
+/* color -> color , background-color , rgb , text , hexcode */
+
+/* text -> text-decoration, text-align  ,font-size , font-family , font-weight , font-style*/
+
+/* box -> width , height , margin , padding , display , border , border-radius */
+
+/* flex-> display:flex , justify-content , align-items , flex-wrap , flex-direction */
+
 h1{
-   text-align: center;
-   background-color: rgba(0, 109, 128, 0.2);
-   color: white;
-   font-size: 50px;
+    color : blue;
 }
-.class_info_para {
-  text-align: center;
-  background-color: beige;
-  font-size: 34px;
-  border: 2px solid black;
-  font-family: ajeebogareeb;
+h2 {
+    color: red;
+    background-color: rgb(0, 255, 255);
+    text-align: center;
 }
 
-/* #p-1{
- font-family: monospace !important;
-} */
-h1 {
-  text-transform: capitalize;
-  text-decoration: blink;
-}
-.google {
-  text-decoration: none;
-  color: blue;
-  font-size: 20px;
-}
-/* p{
-   line-height: 3em; 
-    letter-spacing: 0.5em; 
-   word-spacing: 0.5em;
-   text-align: justify;
-} */
+.para{
+    font-size: 50px;
+    font-weight: lighter;
+    font-style: normal;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+    text-align: justify;
+    background-color: aquamarine;
+    line-height: 80px;
 
-/* p{
-   background-image: url("https://cdn1.iconfinder.com/data/icons/arrows-elements-outline/128/ic_round_hamburger_menu-512.png")   ;
-   vertical-align:top;
-   background-repeat: no-repeat;
-   height: 500px;
-   text-indent: 5em;
-  
-} */
-/* p{
-   text-shadow: 1px 1px 1px lightgray ;
-   text-align: center;
-} */
-.class_info_para {
+    /* box */
+
+    width: 600px;
+    height: 600px;
+    overflow: scroll;
+
+    /* center ka tariqa */
+    margin: 100px auto;
+    padding: 50px;
+
+    display: inline-block;
 }
-.class_info_para:active {
-  color: black;
-}
-.input:focus {
-  background-color: brown;
-}
-/* .link:link{
-text-decoration: none;
-} */
-a:visited {
-  color: aqua;
-  text-decoration: overline;
+
+b{
+    background-color: blueviolet;
 }
