@@ -1,0 +1,71 @@
+.whatsapp_container {
+  height: 100vh !important;
+}
+
+.chat_icon {
+  cursor: pointer;
+}
+
+.chat_icon:hover {
+  background-color: lightgray;
+  border-radius: 4px;
+}
+
+.msg_time {
+  font-size: 12px;
+}
+.last_msg {
+  font-size: 12px;
+}
+.msg_number {
+  height: 16px;
+  width: 16px;
+  background-color: green;
+  color: white;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.users_container , .chat_container {
+  height: 100% !important;
+}
+.chat_users_container {
+  height: 90% !important;
+  overflow-y: scroll;
+}
+
+.user_chat_div:hover {
+  background-color: lightgray;
+}
+
+.input_container {
+  width: 80%;
+  display: flex;
+  border-radius: 25px;
+  background-color: lightgray;
+  overflow: hidden;
+  padding: 2px;
+  align-items: center;
+  height: 30px;
+  margin-left: 10px;
+}
+.input_container > input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background-color: lightgray;
+  padding-left: 10px;
+  font-size: 13px;
+}
+
+.user_msg{
+    max-width: 300px;
+}
+
+.msg_div_container{
+    height: 83% !important;
+    overflow-y: scroll;
+}
