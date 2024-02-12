@@ -1,5 +1,24 @@
-
-
-.text-center{
-    text-align: center;
+:root{
+    --btn-primary : rgb(137, 79, 79) !important;
+    --text-underline : underline
+}
+.heading > h1{
+    text-decoration: var(--text-underline);
+}
+.btn-primary{
+    background-color: var(--btn-primary);
+}
+.box{
+    background-color: aqua;
+    width: 300px; 
+    height: 300px;
+    position: relative;
+}
+.box-2{
+    background-color:black !important;
+    width: 60px; 
+    height: 20px;
+    position: absolute;
+    top: 60px;
+    right: -20px;
 }
