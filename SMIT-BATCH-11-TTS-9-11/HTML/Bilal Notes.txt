@@ -1,0 +1,42 @@
+1.HTML stands for Hyper Text Markup Language
+2.Hyper text means that text should be a link that allows user to 
+jump to another place by clicking it
+3.Markup means that how text is processed and shown to the users
+4.HTML basis are tags and attributes
+5.Tags are used to mark up the start of an HTML element.
+6.Tags  usually enclosed in angle brackets.<> </> 
+7.For coding we will be using vs code.
+8.Attributes contain additional information.
+9.Attributes always comes in the opening tag.
+10.Attributes are the combination of key and value.
+
+
+
+
+Make resume your personal portfolio
+Main headings
+3 pages banaenge
+
+1.Skills
+2.Education
+3.Experience
+
+
+There are two types of url
+1.Absolute url
+2.Relative url-> Relative URLs can be used when linking to pages within your own
+website.
+
+
+There are two types of elements
+1.Blockline elements -> hamesha new line se start hote hen e.g <p>,<h1> , <li>
+2.Inline elements -> jitni jaga chahye hoti he utni hi lete hen e.g , <img /> , <b> , <i>
+
+
+Ecommerce website
+1.Main page will be index.html
+2.in index.html there will be image header and list of website pages links
+3.Website pages will be mens products , women products , kids products
+4.In each page there will be list of items with images
+
+

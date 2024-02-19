@@ -1,0 +1,108 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Nunito Sans", sans-serif;
+}
+nav {
+  height: 60px;
+  background-color: palevioletred;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 12px;
+  position: fixed;
+  width: 98.2%;
+  z-index: 2;
+}
+
+.categories {
+  margin: 0px 5px;
+  cursor: pointer;
+}
+.categories:hover {
+  text-decoration: underline;
+}
+
+nav > div > img {
+  height: 40px;
+  width: 40px;
+}
+
+nav > div > i {
+  font-size: 16px;
+  color: white;
+  margin-right: 2px;
+}
+nav > div > span {
+  font-size: 20px;
+  color: white;
+}
+
+.header {
+  width: 100%;
+  height: 600px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.parent {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.box {
+  width: 300px;
+  height: 370px;
+  border: 1px solid palevioletred;
+  margin: 5px;
+  position: relative;
+}
+
+.box_img {
+  height: 250px;
+  width: 100%;
+}
+.box_price {
+  background-color: palevioletred;
+  color: white;
+  padding: 5px 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.box_title {
+  display: block;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+}
+.box_desc {
+  display: block;
+  font-size: 16px;
+}
+.box > div {
+  padding: 10px;
+}
+
+.add_to_cart {
+  height: 60px;
+  width: 60px;
+  background-color: palevioletred;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  z-index: 3;
+}
+.add_to_cart > i {
+  color: white;
+  font-size: 24px;
+}

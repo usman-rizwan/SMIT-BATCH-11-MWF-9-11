@@ -1,0 +1,223 @@
+<<<<<<< HEAD
+h1 {
+  text-align: center;
+  font-family: "Bungee Spice", sans-serif;
+}
+
+.wall {
+  min-height: 300px;
+  max-width: 900px;
+  border: 5px solid rgb(252, 212, 159);
+  margin: 12px auto;
+  display: flex;
+  background-color: antiquewhite;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  /* justify-content , jab aapki flex-direction row ho , to horizontally
+   items ko set krne ke lye ham use krte hen */
+  /* align-items ,jab aapki flex-direction row ho , to vertically
+   items ko set krne ke lye ham use krte hen align-items  */
+  /* flex-wrap */
+  /* flex-grow */
+  /* flex-shrink */
+}
+
+.wall > div {
+  margin: 20px;
+}
+
+img {
+  height: 100px;
+  width: 80px;
+}
+
+.center {
+  height: 160px;
+  width: 130px;
+  margin: 5px;
+  background-color: rgb(251, 197, 126);
+  border-radius: 4px;
+  border: 2px solid rgb(247, 169, 67);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center > i {
+  font-size: 35px;
+  color: white;
+}
+h2 {
+  color: white;
+  font-family: "Bungee Spice", sans-serif;
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+.center-left {
+  margin-right: 5px;
+}
+.center-right {
+  margin-left: 5px;
+}
+
+/* Simple flex html */
+
+.parent {
+  min-height: 300px;
+  max-width: 600px;
+  border: 5px solid black;
+  margin: 21px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url("https://images.unsplash.com/photo-1620503292890-c597f62cce8d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNwbGFzaHxlbnwwfHwwfHx8MA%3D%3D");
+}
+
+.box {
+  height: 80px;
+  width: 80px;
+  border: 2px solid black;
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border-color: white;
+  color: #000;
+}
+
+i {
+  margin-bottom: 5px;
+  font-size: 20px;
+
+  text-shadow: 1px 1px 1px lightgrey;
+}
+span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.box:hover {
+  cursor: pointer;
+  background-color: #2d2c2c;
+  color: white;
+  border-color:#2d2c2c ;
+}
+=======
+h1 {
+  text-align: center;
+  font-family: "Bungee Spice", sans-serif;
+}
+
+.wall {
+  min-height: 300px;
+  max-width: 900px;
+  border: 5px solid rgb(252, 212, 159);
+  margin: 12px auto;
+  display: flex;
+  background-color: antiquewhite;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  /* justify-content , jab aapki flex-direction row ho , to horizontally
+   items ko set krne ke lye ham use krte hen */
+  /* align-items ,jab aapki flex-direction row ho , to vertically
+   items ko set krne ke lye ham use krte hen align-items  */
+  /* flex-wrap */
+  /* flex-grow */
+  /* flex-shrink */
+}
+
+.wall > div {
+  margin: 20px;
+}
+
+img {
+  height: 100px;
+  width: 80px;
+}
+
+.center {
+  height: 160px;
+  width: 130px;
+  margin: 5px;
+  background-color: rgb(251, 197, 126);
+  border-radius: 4px;
+  border: 2px solid rgb(247, 169, 67);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center > i {
+  font-size: 35px;
+  color: white;
+}
+h2 {
+  color: white;
+  font-family: "Bungee Spice", sans-serif;
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+.center-left {
+  margin-right: 5px;
+}
+.center-right {
+  margin-left: 5px;
+}
+
+/* Simple flex html */
+
+.parent {
+  min-height: 300px;
+  max-width: 600px;
+  border: 5px solid black;
+  margin: 21px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url("https://images.unsplash.com/photo-1620503292890-c597f62cce8d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNwbGFzaHxlbnwwfHwwfHx8MA%3D%3D");
+}
+
+.box {
+  height: 80px;
+  width: 80px;
+  border: 2px solid black;
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border-color: white;
+  color: #000;
+}
+
+i {
+  margin-bottom: 5px;
+  font-size: 20px;
+
+  text-shadow: 1px 1px 1px lightgrey;
+}
+span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.box:hover {
+  cursor: pointer;
+  background-color: #2d2c2c;
+  color: white;
+  border-color:#2d2c2c ;
+}
+>>>>>>> 8ce6212c026496f7ea2d3fd475606753bd878ccc

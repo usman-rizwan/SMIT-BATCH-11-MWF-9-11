@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Form</h1>
+    <form>
+      <f  ieldset>
+        <legend>Important Info</legend>
+        <label for="fullname">
+          Full Name <sup>*</sup>
+          <input
+            name="fullname"
+            id="fullname"
+            type="text"
+            placeholder="Enter your Full Name"
+            value="Bilal Raza"
+            required
+          />
+        </label>
+        <br />
+        <label for="email">
+          Email <sup>*</sup>
+          <input
+            name="email"
+            id="email"
+            type="email"
+            required
+            placeholder="Enter your email"
+          />
+        </label>
+        <br />
+        <label for="cnic">
+          CNIC
+          <input
+            name="cnic"
+            id="cnic"
+            maxlength="13"
+            type="text"
+            placeholder="Enter your CNIC"
+          />
+        </label>
+        <br />
+        <label for="Date">
+          Date
+          <input id="Date" type="date" placeholder="Enter your Date" />
+        </label>
+        <br />
+        <label for="passoword">
+          Your Password
+          <input
+            id="passoword"
+            required
+            type="password"
+            placeholder="Enter password"
+          />
+        </label>
+      </fieldset>
+
+      <label for="color">
+        color
+        <input id="color" type="color" placeholder="Enter your Date" />
+      </label>
+      <br />
+      <label for="search">
+        search
+        <input id="search" type="search" placeholder="Search" />
+      </label>
+      <br />
+      <label for="file">
+        Image
+        <input id="file" type="file" placeholder="Search" />
+      </label>
+      <br />
+      <label for="url">
+        Website Url
+        <input id="url" required type="url" placeholder="Your website url" />
+      </label>
+
+      <br />
+      <label for="number">
+        Your Number
+        <input id="number" type="number" placeholder="Enter number" />
+      </label>
+
+      <h6>Select Gender</h6>
+      <label for="male">
+        <input id="male" type="radio" name="gender" value="male" />
+        Male
+      </label>
+      <label for="female">
+        <input
+          id="female"
+          checked="checked"
+          type="radio"
+          name="gender"
+          value="female"
+        />
+        Female
+      </label>
+
+      <h6>Select Papers</h6>
+      <label for="Maths">
+        <input id="Maths" type="checkbox" name="subject" value="Maths" />
+        Maths
+      </label>
+      <label for="Science">
+        <input
+          id="Science"
+          type="checkbox"
+          name="subject"
+          checked="checked"
+          value="Science"
+        />
+        Science
+      </label>
+      <label for="Urdu">
+        <input id="Urdu" type="checkbox" name="subject" value="Urdu" />
+        Urdu
+      </label>
+
+      <h6>Select Your Country</h6>
+
+      <select name="counrtry" id="country">
+        <option value="">Select Country</option>
+        <option value="pk">Pakistan</option>
+        <option value="in">India</option>
+        <option value="afg">Afghaistan</option>
+      </select>
+
+      <input type="submit" />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </form>
+  </body>
+</html>

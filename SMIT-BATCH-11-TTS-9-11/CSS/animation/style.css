@@ -1,0 +1,63 @@
+@keyframes slide_in {
+    0% {
+        margin-left: -300px;
+    }
+
+    50% {
+        margin-left: -200px;
+    }
+
+    100% {
+        margin-left: 0px;
+    }
+}
+
+@keyframes slide_in_rotation {
+    0% {
+        margin-left: -1000px;
+        
+    }
+
+    25% {
+        margin-left: -500px;
+        transform: rotate(360deg);
+        transition: 3s;
+    }
+    50% {
+        margin-left: 0px;
+        height: 100px;
+        width: 100px;
+        transform: rotate(360deg);
+
+    }
+    100% {
+        margin-left: 550px;
+        transition: 3s;
+        height: 200px;
+        width: 200px;
+    }
+}
+
+h1 {
+    color: red;
+    animation-name: slide_in;
+    animation-duration: 1s;
+}
+
+.box {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    animation: slide_in_rotation;
+    animation-duration: 4s;
+    margin: 0px auto;
+
+    /* animation-delay: 1s; */
+}
+
+
+/* .box:hover {
+    transform: translate(20px , 40px);
+    width: 200px;
+    height: 200px;
+} */

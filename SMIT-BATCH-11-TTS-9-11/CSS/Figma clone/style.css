@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("fonts/Roboto-Regular.ttf");
+}
+
+@keyframes changecolor1 {
+  0% {
+    color: lightblue;
+  }
+
+  50% {
+    color: blue;
+  }
+
+  100% {
+    color: black;
+  }
+}
+
+@keyframes changecolor2 {
+  0% {
+    color: lightblue;
+  }
+
+  50% {
+    color: purple;
+  }
+
+  100% {
+    color: black;
+  }
+}
+
+@keyframes changecolor3 {
+  0% {
+    color: lightblue;
+  }
+
+  50% {
+    color: green;
+  }
+
+  100% {
+    color: black;
+  }
+}
+
+body {
+  font-family: Roboto Medium !important;
+}
+
+li > a {
+  color: black !important;
+  margin: 0px 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+li > a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  border-radius: 8px !important;
+  letter-spacing: 1px;
+}
+.btn:hover {
+  transform: translateY(-2px) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.text-with-icons {
+  font-weight: bold;
+}
+
+.icon_1{
+    animation: changecolor1 3s infinite;
+}
+
+.icon_2{
+    animation: changecolor2 3s infinite;
+    animation-delay: 3s;
+}
+
+.icon_3{
+    animation: changecolor3 3s infinite;
+    animation-delay: 6s;
+}
+
+.design_section{
+    padding : 40px 5px;
+    background-color: rgb(252, 252, 27);
+}
+
+.btn-dark{
+    background-color: black !important;
+}
+
+.bg-dark{
+    background-color: black !important;
+}

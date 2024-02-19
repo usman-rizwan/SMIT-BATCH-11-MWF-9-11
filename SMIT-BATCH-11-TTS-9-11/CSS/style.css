@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "OpenSans";
+  src: url("fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("fonts/OpenSans-Bold.ttf");
+}
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("fonts/OpenSans-Light.ttf");
+}
+
+* {
+  color: rgb(22, 22, 22);
+}
+
+p {
+  font-weight: lighter;
+  font-family: OpenSansLight;
+  font-stretch: expanded;
+  /* font-style: oblique; */
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: lightgray;
+  line-height: 2em;
+  /* letter-spacing: 1px; */
+  /* word-spacing: 10px; */
+  text-align: justify;
+  text-indent: 6 0px;
+}
+
+p:hover {
+  background-color: #aa886a;
+  color: #fff;
+}
+
+/* p > span {
+  text-decoration: underline;
+  text-decoration-color: aquamarine ;
+} */
+
+#sel_heading {
+  color: #aa886a;
+}
+
+.list_item {
+  list-style-type: lower-alpha;
+  color: orange;
+}
+
+h1.css_heading {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+div > h1 {
+  color: blue;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* body {
+    background-color: hsl(180, 100%, 50%);
+} */
