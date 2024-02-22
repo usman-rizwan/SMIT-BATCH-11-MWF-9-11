@@ -1,0 +1,43 @@
+/* LIST 
+list-style-type ,list-style-position
+*/
+/* TAble 
+empty-cells , border-spacing, border-collapse
+
+*/
+
+
+/* li{
+    list-style-type:decimal-leading-zero;
+} */
+
+/* .illuminations > li{
+    list-style-position: outside;
+    list-style: inside circle;
+} */
+
+
+/* table {
+    width: 600px;
+    border: 2px solid black;
+}
+tr , td{
+    border: 2px solid black;
+}
+td{
+    padding: 10px;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+    text-align: center;
+} */
+
+tr , td{
+    border: 2px solid black;
+}
+tr{
+    empty-cells: hide;
+}
+table{
+    border-spacing: 20px;
+    border-collapse: separate;
+}
