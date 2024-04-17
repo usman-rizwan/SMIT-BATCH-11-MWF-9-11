@@ -93,6 +93,7 @@ console.log(username.charAt(0).toUpperCase() + username.slice(1))
 
 //replace
 var string = 'Ubaid is very cute.Ubaid always very loud in the class.'
+
 string = string.replace('Ubaid', 'Obaid')
 
 string = string.replaceAll('Ubaid', 'Obaid')
@@ -100,10 +101,22 @@ console.log(string)
 
 //length
 var email = '  attari1235@gmail.com  '
-console.log("Email Lenght=>" , email.length)
+console.log("Email Lenght=>", email.length)
 
 //trim
 email = email.trim()
-console.log("Email Lenght=>" , email.length)
+console.log("Email Lenght=>", email.length)
 
-//mutable , immutable
+
+
+//count number of a letters used in string
+var string = 'Ubaid is very cute.Ubaid always very loud in the class.'
+
+var count = 0
+for (var i = 0; i < string.length; i++) {
+    if (string.charAt(i).toLowerCase() == 'u') {
+        count++
+    }
+}
+
+console.log("Number of A's are " + count)
