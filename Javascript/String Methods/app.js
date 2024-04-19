@@ -57,13 +57,13 @@ var A = 'A'
 
 var str = 'Bilal Raza'
 //uppercase
-console.log(str.toUpperCase())
+// console.log(str.toUpperCase())
 
 //lowercase
-console.log(str.toLowerCase())
+// console.log(str.toLowerCase())
 
 //indexOf
-console.log(str.indexOf('a'))
+// console.log(str.indexOf('a'))
 
 // var userInfo = prompt('User info')
 // console.log(userInfo.indexOf('  '))
@@ -73,12 +73,12 @@ console.log(str.indexOf('a'))
 // }
 
 //last Index Of
-console.log(str.lastIndexOf('a'))
+// console.log(str.lastIndexOf('a'))
 
 
 // 5.slice()  => to copy string 
-var username = 'basit'
-console.log(username.charAt(0).toUpperCase() + username.slice(1))
+// var username = 'basit'
+// console.log(username.charAt(0).toUpperCase() + username.slice(1))
 // var firstLetter = username.charAt(0)
 // console.log("firstLetter=>", firstLetter)
 
@@ -92,31 +92,104 @@ console.log(username.charAt(0).toUpperCase() + username.slice(1))
 // console.log("Capitilize=>", capitilize)
 
 //replace
-var string = 'Ubaid is very cute.Ubaid always very loud in the class.'
+// var string = 'Ubaid is very cute.Ubaid always very loud in the class.'
 
-string = string.replace('Ubaid', 'Obaid')
+// string = string.replace('Ubaid', 'Obaid')
 
-string = string.replaceAll('Ubaid', 'Obaid')
-console.log(string)
+// string = string.replaceAll('Ubaid', 'Obaid')
+// console.log(string)
 
 //length
-var email = '  attari1235@gmail.com  '
-console.log("Email Lenght=>", email.length)
+// var email = '  attari1235@gmail.com  '
+// console.log("Email Lenght=>", email.length)
 
 //trim
-email = email.trim()
-console.log("Email Lenght=>", email.length)
+// email = email.trim()
+// console.log("Email Lenght=>", email.length)
 
 
 
 //count number of a letters used in string
-var string = 'Ubaid is very cute.Ubaid always very loud in the class.'
+// var string = 'Ubaid is very cute.Ubaid always very loud in the class.'
 
-var count = 0
-for (var i = 0; i < string.length; i++) {
-    if (string.charAt(i).toLowerCase() == 'u') {
-        count++
+// var count = 0
+// for (var i = 0; i < string.length; i++) {
+//     if (string.charAt(i).toLowerCase() == 'u') {
+//         count++
+//     }
+// }
+
+// console.log("Number of A's are " + count)
+
+
+
+//q.Take words or sentence from user using prompt and then
+//show alert or console that how many vowels are used in this sentence/words
+//like in Bilal there are two vowels and 3 non vowels
+
+
+// var userInfo = prompt('Add something')
+
+// var vowelCount = 0
+// var nonVowelCount = 0
+// for (var i = 0; i < userInfo.length; i++) {
+//     console.log(userInfo.charAt(i))
+//     var alphabet = userInfo.charAt(i).toLowerCase()
+//     if (alphabet == 'a' || alphabet == 'i' || alphabet == 'e' || alphabet == 'o' || alphabet == 'u') {
+//         vowelCount++
+//     } else if (alphabet !== ' ') {
+//         nonVowelCount++
+//     }
+// } console.log('Vowels are ', vowelCount, 'Non Vowels are', nonVowelCount)
+
+
+//q.bilal raza attari
+
+// var username = prompt('Add your full name', 'usman rizwan')
+// var username_arr = username.split(' ')
+// console.log("usernam=>", username)
+// console.log("username_arr=>", username_arr)
+
+// for (var i = 0; i < username_arr.length; i++) {
+//     var word = username_arr[i]
+//     console.log(word)
+//     var capitilize = word.charAt(0).toUpperCase() + word.slice(1)
+//     console.log("capitilize==>", capitilize)
+//     username_arr[i] = capitilize
+// }
+
+// console.log("username_arr after update=>", username_arr)
+// username = username_arr.join(' ')
+
+// console.log("username after update=>", username)
+
+
+//Q.Take Password from user 
+// If Password have min 8 length , 1 Capital letter , 1 Number then password is ok otherwise password is wrong.
+
+var capitalLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+var numbers = '1234567890'
+
+var password = prompt('Password')
+
+var minLength = false
+var capitalLetterHe = false
+var numberHe = false
+
+if (password.length >= 8) minLength = true
+for (var i = 0; i < password.length; i++) {
+    console.log(password[i])
+    if (capitalLetters.indexOf(password[i]) !== -1) {
+        capitalLetterHe = true
+    }
+    if (numbers.indexOf(password[i]) !== -1) {
+        numberHe = true
     }
 }
 
-console.log("Number of A's are " + count)
+if (minLength && capitalLetterHe && numberHe) {
+    alert('Password is ok')
+} else {
+    alert('Password is not ok')
+
+}
