@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="heading">Dom and Function</h1>
+    <p id="para">
+      The Document Object Model is a cross-platform and language-independent
+      interface that treats an HTML or XML document as a tree structure wherein
+      each node is an object representing a part of the document. The DOM
+      represents a document with a logical tree.
+    </p>
+
+    <button onclick="showLess()">Show Less</button>
+    <button onclick="showMore()">Show More</button>
+
+    <div style="margin: 20px auto; width: 200px; ">
+      <button onclick="increment()">+</button>
+      <span id="number">1</span>
+      <button onclick="decrement()">-</button>
+    </div>
+
+
+    <div style="margin: 20px auto; width: 500px; ">
+      <textarea id="input" rows="8" cols="50"></textarea>
+      <button onclick="seeLettersWords()">See Number of letters and WordsFF</button>
+
+      <h3 id="output"></h3>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
