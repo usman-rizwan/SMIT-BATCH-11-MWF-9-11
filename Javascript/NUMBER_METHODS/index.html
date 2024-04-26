@@ -1,21 +1,21 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Number Methods</h1>
+    <!-- <h1>Number Methods</h1> -->
 
     <!-- Round Number Example -->
     <div>
-
-        <ul>
+      <!-- <ul>
             <li><b>Round : </b>.5 ya zyada ho to 1 barhado</li>
             <li><b>Ceil : </b>decimal ho to aik number add krdo</li>
             <li><b>Floor : </b>decimal ho to decimal gaeb krdo or number rehne do</li>
-        </ul>
+        </ul> -->
       <!-- <input placeholder="Add Number" id="round_input" />
       <button onclick="round()">Round It</button>
       <h2 style="display: inline-block;" id="round_result"></h2> -->
@@ -30,11 +30,32 @@
     </div>
 
     <!-- Generate Random Number -->
-    <div>
+    <!-- <div>
       <h2 id="random_result"></h2>
       <button onclick="generateRandomNumber()">Generate Random Number</button> 
 
+    </div> -->
+
+    <h1 style="text-align: center">Dice Game</h1>
+    <div
+     class="main"
+    >
+      <div class="box1">
+        <div onclick="checkNumber('1')" class="number">1</div>
+        <div onclick="checkNumber('2')" class="number">2</div>
+        <div onclick="checkNumber('3')" class="number">3</div>
+        <div onclick="checkNumber('4')" class="number">4</div>
+        <div onclick="checkNumber('5')" class="number">5</div>
+        <div onclick="checkNumber('6')" class="number">6</div>
+      </div>
+      <div class="box2">
+        <h4  id="">User Number</h4>
+        <h2  id="user_num">-</h2>
+        <h4 >Result Number</h4>
+        <h2  id="result_num">-</h2>
+      </div>
     </div>
+    <div id="result_box" class="result_box">-</div>
 
     <script src="index.js"></script>
   </body>

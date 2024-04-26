@@ -1,0 +1,52 @@
+.box1 {
+  width: 300px;
+  border: 1px solid rgb(213, 169, 253);
+  margin-right: 10px;
+  min-height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0px auto;
+}
+
+.number{
+    height: 45px;
+    width: 45px;
+    border: 1px solid blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.number:hover{
+    background-color: blueviolet;
+    color: white;
+    cursor: pointer;
+}
+.box2 {
+  width: 150px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+
+.box2 > h2 ,h4{
+    padding: 0px;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.result_box {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+}
