@@ -81,4 +81,7 @@ function checkNumber(userNumber) {
         result_box.innerText = 'Soory!, You lose , Try Again'
         result_box.style.color = 'red'
     }
+
+
+    
 }
