@@ -1,0 +1,55 @@
+@keyframes example {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: yellow;
+    left: 50px;
+    top: 0px;
+  }
+  50% {
+    background-color: blue;
+    right: 50px;
+    top: 50px;
+  }
+  75% {
+    background-color: green;
+    left: 10px;
+    bottom: 50px;
+  }
+  100% {
+    background-color: red;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+  }
+}
+
+.box {
+  height: 300px;
+  width: 300px;
+  background-color: aquamarine;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cow_img {
+  height: 250px;
+  width: 250px;
+}
+
+.animate {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
