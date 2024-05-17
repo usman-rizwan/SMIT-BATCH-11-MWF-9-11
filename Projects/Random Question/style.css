@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* width: 800px; */
+  margin: 10px auto;
+  row-gap: 10px;
+  place-items: center;
+}
+
+.box {
+  height: 170px;
+  width: 220px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+  transition: 0.3s ease-in all;
+  cursor: pointer;
+  border-radius: 10px;
+}

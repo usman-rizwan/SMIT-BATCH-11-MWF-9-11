@@ -69,3 +69,27 @@ function calculate (sign = '+') {
     calculation_result.innerText = num1Value * num2Value
   }
 }
+
+//local Scope
+//global Scope
+//block Scope
+  let a = 'ABC'
+
+function abc () {
+  var ab = a + 'DE'
+  if (a) {
+    console.log(a)
+    let abcd = a + 'DE' + 'FGH'
+    //block Scope
+    var abcde = a + 'DE' + 'FGH'
+    //functional/local Scope
+  }
+  abcde = 'Test'
+  console.log(a)
+  console.log('ab=>', ab)
+  console.log('abc=>', abcde)
+}
+
+// console.log('ab==>', ab)
+
+abc()
