@@ -1,0 +1,25 @@
+li {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.editBtn {
+    background-color: rgb(62, 62, 198);
+    color: white;
+    border: none;
+    padding:5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+.delBtn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding:5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+}
