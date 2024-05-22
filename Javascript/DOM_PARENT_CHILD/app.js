@@ -26,7 +26,7 @@ delete_all_todo_btn.addEventListener('click', function () {
 })
 
 add_todo_btn.addEventListener('click', function () {
-    if (!todo_input.value) return alert('Todo mein kuch daaldo')
+    if (!todo_input.value.trim()) return alert('Todo mein kuch daaldo')
 
     var list_item =
         `<li> 
