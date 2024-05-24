@@ -33,7 +33,6 @@ add_todo_btn.addEventListener('click', function () {
         <span>${todo_input.value}</span>
         <button class = 'editBtn' onclick="edit(this)">edit</button>
         <button class = 'delBtn' onclick="deleteFun(this)">del</button>
-        
         </li>`
     todo_list.innerHTML += list_item
 
