@@ -109,3 +109,13 @@ function displayUserNotes() {
 }
 
 displayUserNotes();
+
+
+//1.Login or home ka page banana he
+//2.Login pe email save krwani he local storage mein
+//3.checkUserLogin ka function banana he , jo check kre ke email he ya nahn
+// agr email ho to usko home ka page show krwaden warna email ka
+//4.Phr Notes ki UI banaenge
+//5.Submit note ka function banake isko local storage mein save krwaenge
+//6.Local storage se value leke display krwaenge.
+//7.Logout ka function  bana lena
