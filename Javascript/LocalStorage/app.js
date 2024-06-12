@@ -29,6 +29,7 @@ var login_container = document.getElementById("login_container");
 var home_container = document.getElementById("home_container");
 var note = document.getElementById("note");
 
+
 function loginUser() {
   if (!email.value || !password.value)
     return alert("Please add email and password.");
@@ -109,7 +110,6 @@ function displayUserNotes() {
 }
 
 displayUserNotes();
-
 
 //1.Login or home ka page banana he
 //2.Login pe email save krwani he local storage mein
