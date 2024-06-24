@@ -1,33 +1,103 @@
+// JavaScript Concepts: Synchronous, Asynchronous, Callbacks, Promises, Fetch API
+
+// Example 1: Synchronous Behavior
 var a = "A";
 var b = "B";
 
-// setTimeout(() => {
-//   console.log(a);
-// }, 0);
+// setTimeout is asynchronous and gets added to the event loop
+setTimeout(() => {
+  console.log(b); // This will log after 'a' due to asynchronous behavior
+}, 0);
 
-// console.log(b);
+console.log(a); // Logs first due to synchronous behavior
 
-//Async functions
-//settimeout (web apis)
-//fetch (web apis)
-//Promise
+// Example 2: Callback Functions
+function sum(a, b, c) {
+  console.log("a=>", a);
+  console.log("b=>", b);
+  console.log("c=>", c()); // c is a callback function
+}
 
-//Callback
+sum(10, 20, () => {
+  return "a+b";
+});
 
-// function getUserInfo(callBack) {
-//   let user = {
-//     fullName: "Bilal Raza",
-//     class: "XII",
-//   };
-//   setTimeout(() => {
-//     callBack();
-//   }, 1000);
-// }
+// Example 3: Callback in Asynchronous Function
+function login(callback) {
+  setTimeout(() => {
+    console.log("User is logged In");
+    callback();
+  }, 500);
+}
 
-// getUserInfo((data) => {
-//   console.log("data==>", data);
-// });
+function getUserInfo() {
+  const user = {
+    fullName: "Bilal Raza",
+  };
+  setTimeout(() => {
+    console.log("User Data is here", user);
+  }, 500);
+}
 
+login(getUserInfo);
+
+// Example 4: Promises
+var isValid = false;
+const p = new Promise((resolve, reject) => {
+  if (isValid) {
+    resolve("User is Logged In");
+  } else {
+    reject("User email/password is not valid.");
+  }
+});
+
+p.then((msg) => console.log(msg)).catch((err) => console.log("catch=>", err));
+
+// Example 5: Promises with Asynchronous Operations
+function loginWithPromise(isValid) {
+  return new Promise((resolve, reject) => {
+    if (isValid) {
+      setTimeout(() => {
+        resolve("User is Logged In");
+      }, 300);
+    } else {
+      reject("User email/password is not valid.");
+    }
+  });
+}
+
+function fetchUserInfo() {
+  const user = {
+    fullName: "Bilal Raza",
+  };
+  setTimeout(() => {
+    console.log("User Data is here", user);
+  }, 500);
+}
+
+loginWithPromise(true)
+  .then(() => {
+    console.log("USER IS LOGGED IN");
+    fetchUserInfo();
+  })
+  .catch((err) => console.log("Catch=>", err));
+
+// Example 6: Fetch API and Displaying Data
+var products = [];
+fetch("https://api.escuelajs.co/api/v1/products")
+  .then((res) => res.json())
+  .then((data) => displayProducts(data));
+
+function displayProducts(products) {
+  console.log("products=>", products);
+  var list = document.getElementById("list");
+  products.forEach((data, ind) => {
+    let ele = `<li>(${data.id}) ${data.title}</li>`;
+    list.innerHTML += ele;
+  });
+}
+
+// Dropdown example with tourist destinations and weather fetch
 var touristDestinations = [
   { name: "Hunza Valley", latitude: 36.3167, longitude: 74.65 },
   { name: "Skardu", latitude: 35.2971, longitude: 75.6333 },
@@ -52,7 +122,17 @@ var touristDestinations = [
   { name: "Karachi", latitude: 24.8607, longitude: 67.0011 },
 ];
 
-let todos = [];
+var locations_dropdown = document.getElementById("locations_dropdown");
+locations_dropdown.addEventListener("change", function () {
+  console.log(this.value);
+  console.log(touristDestinations[this.value]);
+
+  fetchWeather(
+    touristDestinations[this.value].latitude,
+    touristDestinations[this.value].longitude,
+    displayWeatherData
+  );
+});
 
 function fetchWeather(lat, lon, callback) {
   fetch(
@@ -64,14 +144,7 @@ function fetchWeather(lat, lon, callback) {
     });
 }
 
-fetchWeather(
-  touristDestinations[20].latitude,
-  touristDestinations[20].longitude,
-  displayData
-);
-
-function displayData(info) {
+function displayWeatherData(info) {
   console.log("info==>", info);
-  weatherimg.src= ` http://openweathermap.org/img/w/${info.weather[0].icon}.png`
-//  
+  // weatherimg.src= ` http://openweathermap.org/img/w/${info.weather[0].icon}.png`
 }
