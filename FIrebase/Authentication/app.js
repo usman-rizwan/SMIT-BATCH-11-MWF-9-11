@@ -101,3 +101,11 @@ function logout() {
       // An error happened.
     });
 }
+
+// function sum(a,b){
+//   console.log("app.js " , a+b);
+// }
+// myFunction(8,2)
+// multiply(4,4)
+// sum(4,4)
+
