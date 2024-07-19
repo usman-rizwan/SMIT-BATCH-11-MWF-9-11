@@ -1,29 +1,11 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 import {
-  getAuth,
+  app,
+  auth,
   onAuthStateChanged,
-  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
   signOut,
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAr2R1sryYvVbSNdplyeKYrIHHZ6D0uZyc",
-  authDomain: "calcium-pod-256305.firebaseapp.com",
-  projectId: "calcium-pod-256305",
-  storageBucket: "calcium-pod-256305.appspot.com",
-  messagingSenderId: "182256618793",
-  appId: "1:182256618793:web:c3c627824b1c28feea3b38",
-  measurementId: "G-3R2S7KYERZ",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth(app);
-
+} from "./firebase.js";
 const signup_email = document.getElementById("signup_email");
 const signup_password = document.getElementById("signup_password");
 const signup_btn = document.getElementById("signup_btn");
@@ -37,6 +19,9 @@ const logout_btn = document.getElementById("logout_btn");
 
 const auth_container = document.getElementById("auth_container");
 const user_container = document.getElementById("user_container");
+
+const emailRegex =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 signup_btn.addEventListener("click", createUserAccount);
 signin_btn.addEventListener("click", signIn);
@@ -56,9 +41,27 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+function validateSignup() {
+
+}
+
 function createUserAccount() {
   //   console.log("email=>", signup_email.value);
   //   console.log("password=>", signup_password.value);
+
+  if (
+    !signup_email.value.trim().match(emailRegex) ||
+    signup_password.value.length < 6
+  ) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Credentials is not valid",
+     
+    });
+    console.log("Credentials is not valid");
+    return;
+  }
   createUserWithEmailAndPassword(
     auth,
     signup_email.value,
@@ -66,6 +69,12 @@ function createUserAccount() {
   )
     .then((userCredential) => {
       const user = userCredential.user;
+      Swal.fire({
+        icon: "success",
+        title: "Goood ho gaya...",
+        text: "User register succeessfully",
+       
+      });
       console.log("User=>", user);
       // ...
     })
@@ -101,3 +110,10 @@ function logout() {
       // An error happened.
     });
 }
+
+// function sum(a,b){
+//   console.log("app.js " , a+b);
+// }
+// myFunction(8,2)
+// multiply(4,4)
+// sum(4,4)
