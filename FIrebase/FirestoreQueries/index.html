@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="product_form">
+      <input value="Headphone" placeholder="Name" type="text" id="Name" />
+      <input value="40000" placeholder="Price" type="text" id="Price" />
+      <input
+        value="accesories"
+        placeholder="Category"
+        type="text"
+        id="Category"
+      />
+      <input
+        value="https://plus.unsplash.com/premium_photo-1706548331122-8ac9455da8e5?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2Ftc3VuZ3xlbnwwfHwwfHx8MA%3D%3D"
+        placeholder="Img Url"
+        type="text"
+        id="url"
+      />
+      <input type="submit" value="submit" />
+    </form>
+
+    <div>
+      <select name="category" id="category">
+        <option value="">Select Category</option>
+        <option value="electronics">electronics</option>
+        <option value="mobile">mobile</option>
+        <option value="accesories">accesories</option>
+      </select>
+    </div>
+
+    <div
+      id="container"
+      style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px"
+    ></div>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
