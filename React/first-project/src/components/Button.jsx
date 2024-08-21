@@ -1,10 +1,10 @@
-function Button(props) {
+function Button({onPress ,bgColor , title }) {
   return (
     <button 
-    onClick={props.onPress}
+    onClick={onPress}
     style={{ backgroundColor: 
-    props.bgColor }}>
-        {props.title}</button>
+    bgColor }}>
+        {title}</button>
   );
 }
 
