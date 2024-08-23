@@ -1,69 +1,57 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./components/Button";
 
 function App() {
-  const [counter, setCounter] = useState(10);
-  const [color, setColor] = useState("purple");
-  const [username, setUserName] = useState("Bi");
-  const [students, setStudents] = useState([{
-    
-  }]);
+  const [post, setPost] = useState([]);
+  const [search, setSearch] = useState("");
 
-  const addStudent = () => {
-    if(!username) return alert('Please add student Name')
-    const arr = [...students, username];
-    console.log(arr);
-    setStudents(arr);
-    setUserName("");
-  };
-  // let counterVar = 10;
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => setPost(data));
+  }, []);
 
-  // const incrementCounter = () => {
-  //   setCounter(counter + 1);
-  //   counterVar++;
-  // };
-  // console.log("username=>", username);
+  const filteredArr = post.filter(
+    (data) => data.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
+  );
 
   return (
     <div>
-      <input
-        placeholder="User name"
-        value={username}
-        onChange={(e) => setUserName(e.target.value)}
-      />
-      <button onClick={addStudent}>Add</button>
-      {students.map((data, ind) => (
-        <h3  key={ind}>{data}</h3>
-      ))}
-      {/*       
-      <Button title={'Red'} onPress={()=> setColor('red')} />
-      <Button title={'Orange'}  onPress={()=> setColor('orange')}/> */}
-      {/* <div
-        style={{
-          height: 200,
-          width: '100%',
-          backgroundColor: color,
-        }}
-      ></div> */}
-
-      {/* <Button
-        onPress={() => alert("Hello to React")}
-        title="Hello Button"
-        bgColor={"white"}
-      />
-      <Button
-        onPress={function () {
-          alert("Like this");
-        }}
-        title="Like Button"
-        bgColor={"skyblue"}
-      />
-      <Button
-        onPress={() => console.log("Share")}
-        title="Share Button"
-        bgColor={"purple"}
-      />
-      <Button title="Delete Button" bgColor={"red"} /> */}
+      <h1 className="text-center my-5 text-3xl font-semibold underline">
+        Products
+      </h1>
+      <div className="mx-10 w-3/4 mx-auto ">
+        <input
+          placeholder="Search"
+          type="search"
+          className="w-full border-2  p-3 font-bold"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+      <div className="flex flex-wrap m-4">
+        {filteredArr.map((data) => (
+          <div key={data.id} className="lg:w-1/4 md:w-1/2 p-2 w-full">
+            <div className="border  rounded-md overflow-hidden">
+              <a className="block relative h-48 rounded overflow-hidden">
+                <img
+                  alt="ecommerce"
+                  className="object-cover object-center w-full h-full block"
+                  src={data.image}
+                />
+              </a>
+              <div className="mt-4 p-2">
+                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                  {data.category}
+                </h3>
+                <h2 className="text-gray-900 title-font text-lg font-medium">
+                  {data.title}
+                </h2>
+                <p className="mt-1">${data.price}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
