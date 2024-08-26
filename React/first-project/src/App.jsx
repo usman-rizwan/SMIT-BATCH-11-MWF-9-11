@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Button from "./components/Button";
+import { useMemo } from "react";
+import ProductList from "./components/ProductList";
 
 function App() {
   const [post, setPost] = useState([]);
@@ -11,9 +13,7 @@ function App() {
       .then((data) => setPost(data));
   }, []);
 
-  const filteredArr = post.filter(
-    (data) => data.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
-  );
+  const abc = useCallback(() => console.log("abc"), []);
 
   return (
     <div>
@@ -28,30 +28,8 @@ function App() {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className="flex flex-wrap m-4">
-        {filteredArr.map((data) => (
-          <div key={data.id} className="lg:w-1/4 md:w-1/2 p-2 w-full">
-            <div className="border  rounded-md overflow-hidden">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block"
-                  src={data.image}
-                />
-              </a>
-              <div className="mt-4 p-2">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  {data.category}
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  {data.title}
-                </h2>
-                <p className="mt-1">${data.price}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+
+      <ProductList a={"aaa"} abc={abc} post={post} />
     </div>
   );
 }
