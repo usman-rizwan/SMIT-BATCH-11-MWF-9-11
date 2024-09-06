@@ -10,15 +10,19 @@ import {
   Button,
   Avatar,
 } from "@nextui-org/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 function Header() {
+  const { theme, setTheme } = useContext(ThemeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = ["About", "Home"];
   return (
     <Navbar
-      className="w-full border-b-2 bg-amber-100"
+      className={`w-full border-b-2 ${
+        theme == "light" ? "bg-amber-50 text-black" : "bg-zinc-700 text-white"
+      } `}
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent>
@@ -57,11 +61,35 @@ function Header() {
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link to={'/signin'}>Login</Link>
+          <Link to={"/signin"}>Login</Link>
         </NavbarItem>
         <NavbarItem>
+          
           <Button as={Link} color="primary" href="#" variant="flat">
-           <Link to={'/signup'}>Sign Up</Link> 
+            <Link to={"/signup"}>Sign Up</Link>
+          </Button>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Button
+            onClick={() => {
+              if (theme === "light") {
+                setTheme("dark");
+              } else {
+                setTheme("light");
+              }
+            }}
+            className={`${
+              theme == "light"
+                ? "bg-slate-700 text-white"
+                : "bg-white text-black"
+            }`}
+            as={Link}
+            color="primary"
+            href="#"
+            variant="flat"
+          >
+            {theme == "light" ? "Make it Dark" : "Make it Light"}
           </Button>
         </NavbarItem>
       </NavbarContent>

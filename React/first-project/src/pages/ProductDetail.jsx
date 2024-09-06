@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ThemeContext } from "../context/ThemeContext";
 
 function ProductDetail() {
+  const { theme } = useContext(ThemeContext);
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
@@ -11,9 +13,14 @@ function ProductDetail() {
       .then((data) => setProduct(data));
   }, [id]);
 
-  console.log(product);
   return (
-    <div className="m-14 flex flex-col justify-center items-center">
+    <div
+      className="p-14 flex h-screen flex-col justify-center items-center"
+      style={{
+        backgroundColor: theme == "light" ? "white" : "black",
+        color: theme == "light" ? "black" : "white",
+      }}
+    >
       <h1 className="text-4xl"> Product Detail</h1>
       {product ? (
         <div className="m-14 w-1/2 flex flex-col justify-center items-center">

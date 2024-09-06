@@ -1,9 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import ProductList from "../components/ProductList";
+import { ThemeContext } from "../context/ThemeContext";
 
 function Home() {
+  const { theme } = useContext(ThemeContext);
+  console.log("theme=>", theme  );
   const [post, setPost] = useState([]);
-  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -14,7 +16,7 @@ function Home() {
   const abc = useCallback(() => console.log("abc"), []);
 
   return (
-    <div>
+    <div className={`${theme == 'light' ? "bg-white text-black" : "bg-zinc-700 text-white"}`}>
       <h1 className="text-center my-5 text-3xl font-semibold underline">
         Products
       </h1>

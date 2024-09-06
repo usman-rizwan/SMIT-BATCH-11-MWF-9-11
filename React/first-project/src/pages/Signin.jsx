@@ -1,7 +1,7 @@
 import { Button, Input, Link } from "@nextui-org/react";
 import React, { useState } from "react";
 import { Link as MyLink, useNavigate } from "react-router-dom";
-import { app, auth, signInWithEmailAndPassword } from "../utils/firebase";
+import {  auth, signInWithEmailAndPassword } from "../utils/firebase";
 import { toast } from "sonner";
 
 const SigninForm = () => {
