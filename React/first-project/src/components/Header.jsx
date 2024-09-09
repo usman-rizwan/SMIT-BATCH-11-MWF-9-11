@@ -12,12 +12,20 @@ import {
 } from "@nextui-org/react";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import { UserContext } from "../context/UserContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 function Header() {
+  const { user } = useContext(UserContext);
   const { theme, setTheme } = useContext(ThemeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = ["About", "Home"];
+
+  const handleSignOut = async () => {
+    await signOut(auth);
+  };
   return (
     <Navbar
       className={`w-full border-b-2 ${
@@ -60,15 +68,29 @@ function Header() {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link to={"/signin"}>Login</Link>
-        </NavbarItem>
-        <NavbarItem>
+        {user.isLogin ? (
+          <div className="flex items-center">
+            <h1 className="mr-4 font-medium">{user.userInfo?.email}</h1>
           
-          <Button as={Link} color="primary" href="#" variant="flat">
-            <Link to={"/signup"}>Sign Up</Link>
-          </Button>
-        </NavbarItem>
+              <Avatar src={user.userInfo?.photoUrl}
+              
+              className="mx-4"/>
+            <Button onClick={handleSignOut} href="#" variant="flat">
+              Logout
+            </Button>
+          </div>
+        ) : (
+          <>
+            <NavbarItem className="hidden lg:flex">
+              <Link to={"/signin"}>Login</Link>
+            </NavbarItem>
+            <NavbarItem>
+              <Button as={Link} color="primary" href="#" variant="flat">
+                <Link to={"/signup"}>Sign Up</Link>
+              </Button>
+            </NavbarItem>
+          </>
+        )}
 
         <NavbarItem>
           <Button
@@ -86,7 +108,6 @@ function Header() {
             }`}
             as={Link}
             color="primary"
-            href="#"
             variant="flat"
           >
             {theme == "light" ? "Make it Dark" : "Make it Light"}

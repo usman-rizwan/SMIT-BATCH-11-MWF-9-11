@@ -4,7 +4,6 @@ import { ThemeContext } from "../context/ThemeContext";
 
 function Home() {
   const { theme } = useContext(ThemeContext);
-  console.log("theme=>", theme  );
   const [post, setPost] = useState([]);
 
   useEffect(() => {
