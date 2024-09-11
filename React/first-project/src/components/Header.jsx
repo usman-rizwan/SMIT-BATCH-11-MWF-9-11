@@ -7,7 +7,6 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  Button,
   Avatar,
 } from "@nextui-org/react";
 import { useContext, useState } from "react";
@@ -15,6 +14,8 @@ import { ThemeContext } from "../context/ThemeContext";
 import { UserContext } from "../context/UserContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { MoonOutlined } from "@ant-design/icons";
+import { Button } from "antd";
 
 function Header() {
   const { user } = useContext(UserContext);
@@ -71,10 +72,8 @@ function Header() {
         {user.isLogin ? (
           <div className="flex items-center">
             <h1 className="mr-4 font-medium">{user.userInfo?.email}</h1>
-          
-              <Avatar src={user.userInfo?.photoUrl}
-              
-              className="mx-4"/>
+
+            <Avatar src={user.userInfo?.photoUrl} className="mx-4" />
             <Button onClick={handleSignOut} href="#" variant="flat">
               Logout
             </Button>
@@ -93,7 +92,7 @@ function Header() {
         )}
 
         <NavbarItem>
-          <Button
+          <MoonOutlined
             onClick={() => {
               if (theme === "light") {
                 setTheme("dark");
@@ -101,17 +100,7 @@ function Header() {
                 setTheme("light");
               }
             }}
-            className={`${
-              theme == "light"
-                ? "bg-slate-700 text-white"
-                : "bg-white text-black"
-            }`}
-            as={Link}
-            color="primary"
-            variant="flat"
-          >
-            {theme == "light" ? "Make it Dark" : "Make it Light"}
-          </Button>
+          />
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
