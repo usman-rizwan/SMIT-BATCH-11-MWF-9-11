@@ -7,7 +7,6 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  Button,
   Avatar,
 } from "@nextui-org/react";
 import { useContext, useState } from "react";
@@ -15,8 +14,13 @@ import { ThemeContext } from "../context/ThemeContext";
 import { UserContext } from "../context/UserContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { MoonOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { Badge, Button } from "antd";
+import { getItemsFromLocalStorage } from "../utils/localStorage";
+import { CartContext } from "../context/CartContext";
 
 function Header() {
+  const { products } = useContext(CartContext);
   const { user } = useContext(UserContext);
   const { theme, setTheme } = useContext(ThemeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,10 +75,8 @@ function Header() {
         {user.isLogin ? (
           <div className="flex items-center">
             <h1 className="mr-4 font-medium">{user.userInfo?.email}</h1>
-          
-              <Avatar src={user.userInfo?.photoUrl}
-              
-              className="mx-4"/>
+
+            <Avatar src={user.userInfo?.photoUrl} className="mx-4" />
             <Button onClick={handleSignOut} href="#" variant="flat">
               Logout
             </Button>
@@ -93,7 +95,15 @@ function Header() {
         )}
 
         <NavbarItem>
-          <Button
+          <Link to={"/cart"}>
+            <Badge count={products.length}>
+              <ShoppingCartOutlined className="text-2xl" />
+            </Badge>
+          </Link>
+        </NavbarItem>
+
+        <NavbarItem>
+          <MoonOutlined
             onClick={() => {
               if (theme === "light") {
                 setTheme("dark");
@@ -101,17 +111,7 @@ function Header() {
                 setTheme("light");
               }
             }}
-            className={`${
-              theme == "light"
-                ? "bg-slate-700 text-white"
-                : "bg-white text-black"
-            }`}
-            as={Link}
-            color="primary"
-            variant="flat"
-          >
-            {theme == "light" ? "Make it Dark" : "Make it Light"}
-          </Button>
+          />
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>

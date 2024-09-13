@@ -1,8 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
+import { Button } from "antd";
+import {
+  addItemToLocalStorage,
+  getItemsFromLocalStorage,
+  isItemAddedToCart,
+} from "../utils/localStorage";
+import { CartContext } from "../context/CartContext";
 
 function ProductDetail() {
+  const { setProducts } = useContext(CartContext);
   const { theme } = useContext(ThemeContext);
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -12,6 +20,13 @@ function ProductDetail() {
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
+
+  const addToCart = () => {
+    addItemToLocalStorage({ ...product, quantity: 1 });
+
+    const allProducts = getItemsFromLocalStorage();
+    setProducts([...allProducts]);
+  };
 
   return (
     <div
@@ -28,6 +43,10 @@ function ProductDetail() {
           <h1 className="my-3 text-center  text-4xl underline font-semibold">
             {product.title}
           </h1>
+
+          <Button color="primary" size="large" onClick={addToCart}>
+            {isItemAddedToCart(id) ? "Add More" : "Add to Cart"}
+          </Button>
         </div>
       ) : null}
     </div>
