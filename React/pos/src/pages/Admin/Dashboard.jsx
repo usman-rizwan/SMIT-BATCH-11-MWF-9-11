@@ -4,8 +4,10 @@ import {
   NotificationOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { Breadcrumb, Button, Layout, Menu, message, theme } from "antd";
 import { Outlet, useNavigate } from "react-router";
+import { signOut } from "firebase/auth";
+import { auth } from "../../utils/firebase";
 const { Header, Content, Footer, Sider } = Layout;
 
 const items2 = [
@@ -47,16 +49,32 @@ const Dashboard = () => {
         style={{
           display: "flex",
           alignItems: "center",
+          justifyContent: "space-between",
         }}
+        className="bg-white shadow border"
       >
-        <div className="demo-logo" />
+        <div className="demo-logo">
+          <h1>Logo</h1>
+        </div>
+
+        <Button
+          onClick={() =>
+            signOut(auth).then(() =>
+              message.success("User logout Successfully")
+            )
+          }
+        >
+          Logout
+        </Button>
       </Header>
       <Content
-        style={{
-          padding: "0 48px",
-        }}
+        style={
+          {
+            // padding: "0 48px",
+          }
+        }
       >
-        <Breadcrumb
+        {/* <Breadcrumb
           style={{
             margin: "16px 0",
           }}
@@ -64,7 +82,7 @@ const Dashboard = () => {
           <Breadcrumb.Item>Home</Breadcrumb.Item>
           <Breadcrumb.Item>List</Breadcrumb.Item>
           <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
+        </Breadcrumb> */}
         <Layout
           style={{
             padding: "24px 0",

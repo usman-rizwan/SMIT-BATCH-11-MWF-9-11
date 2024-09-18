@@ -1,6 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useContext } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import SignIn from "./pages/Auth/Signin";
 import Dashboard from "./pages/Admin/Dashboard";
@@ -8,35 +6,50 @@ import Users from "./pages/Admin/Users";
 import Products from "./pages/Admin/Products";
 import Purchase from "./pages/Admin/Purchase";
 import Reports from "./pages/Admin/Reports";
-import POS from "./pages/POS/POS.JSX";
+import POS from "./pages/POS/POS";
 import { AuthContext } from "./context/Auth";
 
 function App() {
   const { user } = useContext(AuthContext);
 
+  // Create a function to determine the initial route based on user's status
+  const getInitialRoute = () => {
+    if (user?.isLogin && user?.role === "admin") {
+      return <Navigate to="/admin/users" />;
+    } else if (user?.isLogin) {
+      return <Navigate to="/pos" />;
+    } else {
+      return <SignIn />;
+    }
+  };
+
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={getInitialRoute()} />
+
+        {/* Admin routes, protected */}
         <Route
-          path="/"
+          path="/admin"
           element={
-            user.isLogin && user.role == "admin" ? (
-              <Navigate to={"/admin/users"} />
-            ) : user.isLogin ? (
-              <Navigate to={"/pos"} />
+            user?.isLogin && user?.role === "admin" ? (
+              <Dashboard />
             ) : (
-              <SignIn />
+              <Navigate to="/" />
             )
           }
-        />
-
-        <Route path="/admin" element={<Dashboard />}>
+        >
           <Route path="users" element={<Users />} />
           <Route path="products" element={<Products />} />
           <Route path="purchases" element={<Purchase />} />
           <Route path="reports" element={<Reports />} />
         </Route>
-        <Route path="/pos" element={<POS />} />
+
+        {/* POS route */}
+        <Route
+          path="/pos"
+          element={user?.isLogin ? <POS /> : <Navigate to="/" />}
+        />
       </Routes>
     </BrowserRouter>
   );
