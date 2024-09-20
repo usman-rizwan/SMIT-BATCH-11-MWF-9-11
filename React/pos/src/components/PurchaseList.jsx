@@ -15,14 +15,14 @@ function PurchaseList() {
   const getProductsFromDB = async () => {
     try {
       setLoading(true);
-      const ref = collection(db, "purchases");
-      const purchaseData = await getDocs(ref);
-      if (!purchaseData.empty) {
-        const allPurchases = [];
-        purchaseData.forEach((purchase) => {
-          allPurchases.push({ ...purchase.data(), id: purchase.id });
+      const ref = collection(db, "products");
+      const productData = await getDocs(ref);
+      if (!productData.empty) {
+        const allProducts = [];
+        productData.forEach((product) => {
+          allProducts.push({ ...product.data(), id: product.id });
         });
-        setPurchases([...allPurchases]);
+        setProducts([...allProducts]);
         setLoading(false);
       }
     } catch (err) {
@@ -61,7 +61,7 @@ function PurchaseList() {
       dataIndex: "quantity",
       key: "quantity",
     },
-    
+
     {
       title: "Action",
       key: "action",
