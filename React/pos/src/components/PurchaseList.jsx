@@ -15,14 +15,14 @@ function PurchaseList() {
   const getProductsFromDB = async () => {
     try {
       setLoading(true);
-      const ref = collection(db, "products");
+      const ref = collection(db, "purchases");
       const productData = await getDocs(ref);
       if (!productData.empty) {
         const allProducts = [];
         productData.forEach((product) => {
           allProducts.push({ ...product.data(), id: product.id });
         });
-        setProducts([...allProducts]);
+        setPurchases([...allProducts]);
         setLoading(false);
       }
     } catch (err) {

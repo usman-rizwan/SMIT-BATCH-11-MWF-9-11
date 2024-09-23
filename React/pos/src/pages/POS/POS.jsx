@@ -13,6 +13,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { AuthContext } from "../../context/Auth";
+import { Link } from "react-router-dom";
 
 //1.Get Products
 //2.Add to Cart on Click
@@ -108,8 +109,21 @@ function POS() {
   };
 
   return (
-    <div className="container mx-auto">
-      <div className="flex flex-grow  h-screen w-screen">
+    <div>
+      <div className="flex justify-between p-2 border-b shadow">
+        <h1>POS</h1>
+        <span>
+          <Link to={"/transactions"}>
+            <Button>Transactions</Button>
+          </Link>
+          <Button
+          onClick={()=> signOut(auth).then(()=> console.log(
+            "User Signed Out"
+          ))}
+          className="ml-4">Logout</Button>
+        </span>
+      </div>
+      <div className="flex flex-grow h-screen w-screen">
         {/* products */}
         <div className="w-1/2 border-r-2 border-r-gray-300 flex-grow">
           <h1 className="text-center my-6 text-2xl">Products</h1>
@@ -124,7 +138,6 @@ function POS() {
                 border cursor-pointer ${isAdded && "bg-blue-200"}
                 justify-center items-center`}
                 >
-                  <Image preview={false} src={data.image} width={100} />
                   <h1 className="font-medium mt-2 text-center">{data.title}</h1>
                   <h1 className="font-medium text-center">{data.price} Rs</h1>
                   <h1 className="font-medium text-center">

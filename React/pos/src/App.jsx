@@ -6,8 +6,9 @@ import Users from "./pages/Admin/Users";
 import Products from "./pages/Admin/Products";
 import Purchase from "./pages/Admin/Purchase";
 import Reports from "./pages/Admin/Reports";
-import POS from "./pages/POS/POS";
+import POS from "./pages/POS/POS.jsx";
 import { AuthContext } from "./context/Auth";
+import Transactions from "./pages/Transactions/Transactions";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -49,6 +50,10 @@ function App() {
         <Route
           path="/pos"
           element={user?.isLogin ? <POS /> : <Navigate to="/" />}
+        />
+         <Route
+          path="/transactions"
+          element={user?.isLogin ? <Transactions /> : <Navigate to="/" />}
         />
       </Routes>
     </BrowserRouter>
