@@ -1,19 +1,23 @@
 import Link from "next/link";
 import React from "react";
 
+export const revalidate = 60
+export const dynamicParams = true
+
 const Blogs = async () => {
-  let news = await fetch(
-    "https://api.thenewsapi.com/v1/news/top?api_token=4kg9t6R9h2j1gFnP6oerJz0h6BHr9ZebTXA3GUl6&locale=us&limit=3"
-  );
+  let news = await fetch(`http://localhost:3000/api/blogs`);
   news = await news.json();
   return (
     <div className="">
-      {news?.data.map((data) => (
-        <Link href={`/blogs/${data.uuid}`} key={data.uuid} className="border m-2 rounded p-4 flex">
-          <img src={data.image_url} className="h-20 w-20 rounded" />
+      {news.map((data) => (
+        <Link
+          href={`/blogs/${data.id}`}
+          key={data.id}
+          className="border m-2 rounded p-4 flex"
+        >
           <div className="ml-2">
             <h1 className="font-bold">{data?.title}</h1>
-            <h1 className="my-2">{data?.description}</h1>
+            <h1 className="my-2">{data?.desc}</h1>
           </div>
         </Link>
       ))}
