@@ -24,7 +24,7 @@ model Blog {
 model User {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   userName  String
-  email  String
+  email     String
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
