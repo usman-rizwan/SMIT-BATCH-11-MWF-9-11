@@ -3,7 +3,7 @@ const todos = [
     id: 1,
     task: "Task 1",
     isCompleted: true,
-  },
+  },  
   {
     id: 2,
     task: "Task 2",
@@ -40,4 +40,27 @@ export async function POST(request) {
     data: todos,
     msg: "Todos Added successfully",
   });
+}
+
+export async function PUT(req) {
+  const data = await req.json();
+  // console.log("dtraa " , data);
+
+  const todoIndex = todos.findIndex((items) => items.id == data.id);
+  console.log(todoIndex);
+
+  todos[todoIndex] = data;
+
+  return Response.json({ msg: "Successfully edited", status: 200 });
+}
+export async function DELETE(req) {
+  const data = await req.json();
+  console.log("data " , data);
+
+  const todoIndex = todos.findIndex((items) => items.id == data);
+   console.log(todoIndex);
+
+   todos.splice(todoIndex, 1);
+
+  return Response.json({ msg: "Successfully Deleted", status: 200 });
 }
